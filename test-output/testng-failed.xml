@@ -6,7 +6,8 @@
       <class name="Tests.Testcases">
         <methods>
           <include name="tearDown"/>
-          <include name="FindWhichSiteIsGivingCheaperRate"/>
+          <include name="navigation"/>
+          <include name="VerifyWhichSiteIsGivingCheaperRate"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Tests.Testcases -->

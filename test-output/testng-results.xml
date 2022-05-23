@@ -2,23 +2,39 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-23T17:22:41 IST" name="Default suite" finished-at="2022-05-23T17:23:36 IST" duration-ms="54489">
+  <suite started-at="2022-05-23T19:56:43 IST" name="Default suite" finished-at="2022-05-23T19:57:49 IST" duration-ms="66077">
     <groups>
     </groups>
-    <test started-at="2022-05-23T17:22:41 IST" name="Default test" finished-at="2022-05-23T17:23:36 IST" duration-ms="54489">
+    <test started-at="2022-05-23T19:56:43 IST" name="Default test" finished-at="2022-05-23T19:57:49 IST" duration-ms="66077">
       <class name="Tests.Testcases">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.Testcases@6da21078]" started-at="2022-05-23T17:22:41 IST" name="setUp" finished-at="2022-05-23T17:22:41 IST" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Tests.Testcases@169e6180]" started-at="2022-05-23T19:56:43 IST" name="setUp" finished-at="2022-05-23T19:56:43 IST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="PrintPriceAfterAdditionOfQuantity()[pri:1, instance:Tests.Testcases@6da21078]" started-at="2022-05-23T17:22:41 IST" name="PrintPriceAfterAdditionOfQuantity" finished-at="2022-05-23T17:23:09 IST" duration-ms="27394" status="PASS">
+        <test-method is-config="true" signature="navigation()[pri:0, instance:Tests.Testcases@169e6180]" started-at="2022-05-23T19:56:43 IST" name="navigation" finished-at="2022-05-23T19:56:50 IST" duration-ms="6655" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigation -->
+        <test-method signature="PrintPriceAfterAdditionOfQuantity()[pri:1, instance:Tests.Testcases@169e6180]" started-at="2022-05-23T19:56:50 IST" name="PrintPriceAfterAdditionOfQuantity" finished-at="2022-05-23T19:57:13 IST" duration-ms="23096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PrintPriceAfterAdditionOfQuantity -->
-        <test-method signature="FindWhichSiteIsGivingCheaperRate()[pri:2, instance:Tests.Testcases@6da21078]" started-at="2022-05-23T17:23:09 IST" name="FindWhichSiteIsGivingCheaperRate" finished-at="2022-05-23T17:23:36 IST" duration-ms="27033" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.Testcases@169e6180]" started-at="2022-05-23T19:57:13 IST" name="tearDown" finished-at="2022-05-23T19:57:14 IST" duration-ms="1158" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FindWhichSiteIsGivingCheaperRate -->
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="navigation()[pri:0, instance:Tests.Testcases@169e6180]" started-at="2022-05-23T19:57:14 IST" name="navigation" finished-at="2022-05-23T19:57:18 IST" duration-ms="3851" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigation -->
+        <test-method signature="VerifyWhichSiteIsGivingCheaperRate()[pri:2, instance:Tests.Testcases@169e6180]" started-at="2022-05-23T19:57:18 IST" name="VerifyWhichSiteIsGivingCheaperRate" finished-at="2022-05-23T19:57:48 IST" duration-ms="29616" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyWhichSiteIsGivingCheaperRate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Tests.Testcases@169e6180]" started-at="2022-05-23T19:57:48 IST" name="tearDown" finished-at="2022-05-23T19:57:49 IST" duration-ms="1599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- Tests.Testcases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
