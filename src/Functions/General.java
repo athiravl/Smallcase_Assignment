@@ -15,8 +15,10 @@ import Pages.FlipkartProductListPage;
 
 public class General 
 {
-	WebDriver driver;
+	private static WebDriver driver = null;
+	public static Integer Sleep = 10000;
 	
+		
 	public General(WebDriver driver)
 	{
 		this.driver = driver;
@@ -29,6 +31,12 @@ public class General
 		{
 			driver.switchTo().window(childWindow);
 		}
+	}
+	
+	public void Navigate(String url)
+	{
+		
+		driver.get(url);
 	}
 	
 	public void ParentWindow()
@@ -49,8 +57,9 @@ public class General
 	
 	public String PrintPriceOfTheItemInFlipkart()
     {    	
+		General general = new General(driver);
 		
-		driver.get(Urls.FLIPKART_URL); 
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    
 	    String productName = "milton duo dlx 1000 thermosteel";
@@ -63,8 +72,7 @@ public class General
 	    //3. Click on the First Item in the list.
 	    FlipkartProductListPage fkPrdt = new FlipkartProductListPage(driver);
 	    fkPrdt.firstProduct();
-	    
-	    General general = new General(driver);
+	    	    
 	    general.ChildWindow();  //redirects to child window
 	    
 	    //4. Print Price of the Item
@@ -78,7 +86,7 @@ public class General
 	public String PrintPriceOfTheItemInAmazon()
     {    	
 	    
-		driver.get(Urls.AMAZON_URL);
+
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	    String productName = "milton duo dlx 1000 thermosteel";
@@ -115,6 +123,7 @@ public class General
 		driver.close();
 		general.ParentWindow();
 		
+		general.Navigate(Urls.FLIPKART_URL);
 		String priceInFlipkart = general.PrintPriceOfTheItemInFlipkart();
 		int priceInFk = Integer.parseInt(priceInFlipkart.replaceAll(",", ""));
 		

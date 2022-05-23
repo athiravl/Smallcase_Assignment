@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import Functions.General;
@@ -19,7 +20,8 @@ import Pages.FlipkartProductListPage;
 
 public class Testcases 
 {
-		
+	public static WebDriver driver = null;	
+	
 	@BeforeTest
 	public void setUp()
 	{
@@ -28,18 +30,25 @@ public class Testcases
 	    
 	}
 	
+	@BeforeMethod
+	public void navigation()
+	{
+        
+		driver = new ChromeDriver();
+	    driver.manage().window().maximize();	 
+		
+	}
+	
 	
     @Test(priority = 1)
 	public void PrintPriceAfterAdditionOfQuantity() throws InterruptedException
 	{
-		
-	    WebDriver driver = new ChromeDriver();
-	    
-	    driver.manage().window().maximize();	     
+		   
 	    
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    
 	    General general = new General(driver);
+	    general.Navigate(Urls.FLIPKART_URL);
     	general.PrintPriceOfTheItemInFlipkart();
 	    
 	    // Add to cart in guest mode and Go to cart.
@@ -50,7 +59,7 @@ public class Testcases
 	    FlipkartMyCartPage cart = new FlipkartMyCartPage(driver);
 	    cart.increaseQuantity();
 	    
-	    Thread.sleep(10000);
+	    Thread.sleep(general.Sleep);
 	    
 	    //general.WaitUntilTextAppearsInElement(cart.increasedQntyValue,"2");
 	    
@@ -58,26 +67,28 @@ public class Testcases
 	    String totalPrice = cart.totalPriceOfProduct();
 	    System.out.println("Price of the item in Flipkart after increasing the quantity:" + totalPrice);
 	    
-	    driver.quit();
 		
 	}
     
     @Test(priority = 2)
     public void VerifyWhichSiteIsGivingCheaperRate()
     {
-    	
-    	
-	    WebDriver driver = new ChromeDriver();
-	    
-	    driver.manage().window().maximize();  
+    	    	 
 	    
     	General general = new General(driver);
+    	general.Navigate(Urls.AMAZON_URL);
     	
     	//Compare prices of the item in amazon and flipkart
     	general.FindTheCheaperRateForTheProduct();   	
     	
-    	driver.quit();
     	
     }   
 
+    @AfterMethod
+    public void tearDown()
+    {
+    	
+    	driver.quit();
+    	
+    }
 }
